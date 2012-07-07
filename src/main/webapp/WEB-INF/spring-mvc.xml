@@ -17,6 +17,6 @@
     <mvc:view-controller path="/login"/>
     <mvc:view-controller path="/loginfailed"/>
     <bean id="poemController" class="com.thoughtworks.PoemController"/>
-
+    <bean id="poemDao" class="com.thoughtworks.PoemDao"/>
 
 </beans>

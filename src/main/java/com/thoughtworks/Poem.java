@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: twer
@@ -7,7 +9,7 @@ package com.thoughtworks;
  * Time: 2:44 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Poem {
+public class Poem implements Serializable {
     private int id;
     private String context;
     private String qi;

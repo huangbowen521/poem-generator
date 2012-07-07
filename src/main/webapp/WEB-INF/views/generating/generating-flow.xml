@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <on-start>
+        <evaluate expression="poemDao.create()" result="flowScope.poem" />
+    </on-start>
+
+    <view-state id="qi" view="generating/first" model="poem">
+        <binder>
+            <binding property="qi" />
+        </binder>
+        <transition on="next" to="cheng"/>
+        <transition on="cancel" to="cancel" bind="false"/>
+    </view-state>
+
+    <view-state id="cheng" view="generating/second" model="poem">
+        <binder>
+            <binding property="cheng" />
+        </binder>
+        <transition on="next" to="zhuan"/>
+        <transition on="cancel" to="cancel"/>
+    </view-state>
+
+    <view-state id="zhuan" view="generating/third" model="poem">
+        <binder>
+            <binding property="zhuan" />
+        </binder>
+        <transition on="next" to="he"/>
+        <transition on="cancel" to="cancel"/>
+    </view-state>
+
+    <view-state id="he" view="generating/fourth" model="poem">
+        <binder>
+            <binding property="he" />
+        </binder>
+        <transition on="next" to="successfully"/>
+        <on-exit>
+            <evaluate expression="poemDao.save(poem)" />
+        </on-exit>
+    </view-state>
+
+    <end-state id="successfully" view ="generating/successfully" />
+    <end-state id="cancel" view="externalRedirect:contextRelative:/poem/index.do" />
+</flow>
