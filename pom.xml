@@ -5,7 +5,7 @@
     <groupId>com.thoughtworks</groupId>
     <artifactId>poem-generator</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>poem-generator</name>
     <url>http://maven.apache.org</url>
@@ -40,10 +40,12 @@
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>maven-jetty-plugin</artifactId>
                 <version>6.1.10</version>
+
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <stopKey>foo</stopKey>
                     <stopPort>9999</stopPort>
+
                 </configuration>
                 <executions>
                     <execution>
@@ -55,7 +57,9 @@
                         <configuration>
                             <scanIntervalSeconds>0</scanIntervalSeconds>
                             <daemon>true</daemon>
+
                         </configuration>
+
                     </execution>
                     <execution>
                         <id>stop-jetty</id>
