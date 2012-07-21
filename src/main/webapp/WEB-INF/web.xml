@@ -11,6 +11,8 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
+            /WEB-INF/database/dataSource.xml,
+            /WEB-INF/database/hibernate.xml,
             /WEB-INF/spring-mvc.xml,
             /WEB-INF/spring-webflow.xml,
             /WEB-INF/spring-security.xml

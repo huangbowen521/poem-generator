@@ -7,12 +7,7 @@
     <th>Content</th>
     </thead>
     <tbody>
-    <c:forEach items="${poem}" var="poem">
-        <tr>
-            <td><c:out value="${poem.id}"/></td>
-            <td><c:out value="${poem.context}"/></td>
-        </tr>
-    </c:forEach>
+ 
     </tbody>
 </table>
 
@@ -22,8 +17,8 @@
     </div>
 </form>
 
-<form method="get" action="<c:url value="/famous-sentence" />">
+<form method="get" action="<c:url value="/poem/poemlist" />">
     <div>
-        <button type="submit" id="sentence" name="_eventId_sentence">Add famous sentence</button>
+        <button type="submit" id="sentence" >poemlist</button>
     </div>
 </form>

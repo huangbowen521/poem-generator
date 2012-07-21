@@ -1,42 +1,25 @@
 package com.thoughtworks;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created with IntelliJ IDEA.
- * User: twer
- * Date: 7/7/12
- * Time: 2:44 PM
- * To change this template use File | Settings | File Templates.
- */
-public class Poem implements Serializable {
-    private int id;
-    private String context;
-    private String qi;
-    private String cheng;
-    private String zhuan;
-    private String he;
+@Entity
+@Table(name = "poem")
+public class Poem implements Serializable{
+    Integer id;
+    String qi;
+    String cheng;
+    String zhuan;
+    String he;
 
-    public  Poem (int id,String context)
-    {
-        this.id = id;
-        this.context = context;
-    }
-
-    public int getId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getContext() {
-        return context;
-    }
-
-    public void setContext(String context) {
-        this.context = context;
     }
 
     public String getQi() {

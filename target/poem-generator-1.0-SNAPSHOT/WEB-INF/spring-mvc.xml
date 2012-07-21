@@ -8,15 +8,38 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
+    <mvc:annotation-driven/>
+
+    <import resource="database/dataSource.xml" />
+    <import resource="database/hibernate.xml" />
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
-
     <mvc:view-controller path="/login"/>
     <mvc:view-controller path="/loginfailed"/>
-    <been id="poemController" class="com.thoughtworks.PoemController" />
+
+    <!-- Make sure annotation mapping handler works-->
+    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+    <bean id="handlerAdapter" class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+    <bean id="sentenceController" class="com.thoughtworks.SentenceController">
+        <property name="sentenceDao" ref="sentenceDao"/>
+    </bean>
+    <bean id="poemController" class="com.thoughtworks.PoemController">
+        <property name="poemDao" ref="poemDao" />
+    </bean>
+
+
+
+    <bean id="poemDao" class="com.thoughtworks.dao.PoemDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="sentenceDao" class="com.thoughtworks.dao.SentenceDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 </beans>
