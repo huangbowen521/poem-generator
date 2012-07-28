@@ -42,6 +42,9 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
+  <component name="GradleSettings">
+    <option name="gradleHome" value="/usr/local/bin/gradle" />
+  </component>
   <component name="IdProvider" IDEtalkID="182C0FADD172EABFEDB00C6CA21A8469" />
   <component name="ImportConfiguration">
     <option name="VENDOR" />

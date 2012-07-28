@@ -7,12 +7,7 @@
     <th>Content</th>
     </thead>
     <tbody>
-    <c:forEach items="${sentences}" var="sentence">
-        <tr>
-            <td><c:out value="${sentence.id}"/></td>
-            <td><c:out value="${sentence.content}"/></td>
-        </tr>
-    </c:forEach>
+ 
     </tbody>
 </table>
 

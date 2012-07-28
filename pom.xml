@@ -99,6 +99,11 @@
             <artifactId>selenium-server</artifactId>
             <version>2.25.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.concordion</groupId>
+            <artifactId>concordion</artifactId>
+            <version>1.4.2</version>
+        </dependency>
 
         <!--security configuration-->
         <dependency>

@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
-
+ <title>success</title>
 <p>Well done! You create a chinese ancient poem.</p>
 <p><c:out value="${poem.qi}" /></p>
 <p><c:out value="${poem.cheng}" /></p>
